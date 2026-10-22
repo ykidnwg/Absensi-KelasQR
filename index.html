@@ -20,6 +20,8 @@
         <form id="loginForm">
           <label for="email">Email kampus</label>
           <div class="input-wrap"><span class="field-icon">✉</span><input id="email" type="email" placeholder="nama@kampus.ac.id" required></div>
+          <label for="role">Masuk sebagai</label>
+          <div class="input-wrap role-wrap"><span class="field-icon">◎</span><select id="role" required aria-label="Pilih peran"><option value="mahasiswa">Mahasiswa</option><option value="dosen">Dosen</option><option value="admin">Admin</option></select></div>
           <label for="password">Kata sandi</label>
           <div class="input-wrap"><span class="field-icon">⌑</span><input id="password" type="password" placeholder="Masukkan kata sandi" required><button class="show-password" type="button" id="togglePassword">Lihat</button></div>
           <div class="form-row"><label class="remember"><input type="checkbox"> <span>Ingat saya</span></label><a href="#" id="forgotLink">Lupa kata sandi?</a></div>

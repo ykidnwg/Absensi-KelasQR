@@ -1,3 +1,4 @@
+const landingPage = document.getElementById("landingPage");
 const loginPage = document.getElementById("loginPage");
 const dashboardPage = document.getElementById("dashboardPage");
 const loginForm = document.getElementById("loginForm");
@@ -70,13 +71,28 @@ function bindDashboard(role) {
 
 function logout() {
   dashboardPage.hidden = true;
-  loginPage.hidden = false;
-  if (visualPanel) visualPanel.hidden = false;
+  loginPage.hidden = true;
+  if (landingPage) landingPage.hidden = false;
+  if (visualPanel) visualPanel.hidden = true;
   dashboardPage.innerHTML = originalDashboard;
   loginForm?.reset();
   window.scrollTo({ top: 0, behavior: "smooth" });
   showToast("Kamu sudah keluar dari prototipe.");
 }
+
+function openLoginPage() {
+  if (landingPage) landingPage.hidden = true;
+  loginPage.hidden = false;
+  if (visualPanel) visualPanel.hidden = true;
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+document.getElementById("openLogin")?.addEventListener("click", openLoginPage);
+document.getElementById("openLoginTop")?.addEventListener("click", openLoginPage);
+document.getElementById("backLanding")?.addEventListener("click", () => {
+  loginPage.hidden = true;
+  if (landingPage) landingPage.hidden = false;
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
 
 document.getElementById("togglePassword")?.addEventListener("click", () => {
   const password = document.getElementById("password");
@@ -91,6 +107,7 @@ loginForm?.addEventListener("submit", event => {
   const email = document.getElementById("email")?.value || "";
   const name = email.includes("@") ? email.split("@")[0].replace(/[._-]+/g, " ").replace(/\b\w/g, char => char.toUpperCase()) : "Pengguna Hadirin";
   loginPage.hidden = true;
+  if (landingPage) landingPage.hidden = true;
   if (visualPanel) visualPanel.hidden = true;
   dashboardPage.innerHTML = role === "admin" ? adminDashboard(name) : role === "dosen" ? dosenDashboard(name) : originalDashboard;
   dashboardPage.hidden = false;

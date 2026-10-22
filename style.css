@@ -42,3 +42,78 @@ th{padding:12px 9px;color:#a49aaa;letter-spacing:1px}td{padding:15px 9px;border-
 .login-panel{background:#fff}.login-content h1{letter-spacing:-4px}.input-wrap{border-radius:13px;background:#fdfbfe}.primary-btn{background:linear-gradient(110deg,#19151e,#2a1b2b);border-radius:13px;box-shadow:0 8px 20px #19151e17}.primary-btn:hover{background:linear-gradient(110deg,#e52c87,#ff4fa3);box-shadow:0 10px 24px #ff4fa333}.visual-panel{background:#19151e}.phone-card{border:1px solid #ffffffa8;box-shadow:0 28px 75px #0006}
 @media(max-width:1000px){.sidebar{width:215px}.dashboard-main{padding:26px 20px}.welcome-banner{padding:25px}.stat-card{padding:15px}}
 @media(max-width:720px){.sidebar{background:#19151e;padding:14px 16px}.sidebar-brand{padding-bottom:16px}.sidebar .nav-item{color:#c4b8c9}.sidebar .nav-item.active{color:#21131d}.dashboard-main{padding:22px 15px}.welcome-banner{min-height:140px;padding:21px;border-radius:18px}.banner-art{font-size:72px}.stats-grid{gap:10px}.stat-card{border-radius:15px}.content-card{border-radius:16px;padding:15px}.dashboard-main .content-card table{min-width:450px}}
+
+/* LANDING PAGE — Hadirin Gen Z premium */
+.landing-page{min-height:100vh;position:relative;overflow:hidden;padding:28px clamp(24px,6vw,92px) 22px;color:#f7f3fa;background:#111016;display:flex;flex-direction:column;isolation:isolate}
+.landing-page:before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 78% 20%,#6f214b55,transparent 35%),radial-gradient(ellipse at 20% 85%,#39204d88,transparent 38%),linear-gradient(135deg,#111016,#17111e 65%,#211323)}
+.landing-page:after{content:"";position:absolute;inset:0;z-index:-1;opacity:.16;background-image:linear-gradient(#ffffff12 1px,transparent 1px),linear-gradient(90deg,#ffffff12 1px,transparent 1px);background-size:46px 46px;mask-image:linear-gradient(to bottom,black,transparent 95%)}
+.landing-nav{display:flex;align-items:center;justify-content:space-between;gap:18px;position:relative;z-index:3}.landing-nav .brand-mark{background:#f7f3fa;color:#17111d}.landing-nav .brand{color:#fff}.landing-status{font-size:9px;letter-spacing:1.5px;color:#b5a8bd;display:flex;align-items:center;gap:9px}.landing-status i,.landing-note i,.landing-card-footer i{width:7px;height:7px;border-radius:50%;background:#ff4fa3;display:inline-block;box-shadow:0 0 0 5px #ff4fa31b}.landing-login{background:#ffffff08;border:1px solid #ffffff28;border-radius:12px;padding:12px 18px;color:#fff;font-weight:700}.landing-login span{color:#ff4fa3;margin-left:12px}.landing-hero{flex:1;display:grid;grid-template-columns:minmax(0,.9fr) minmax(420px,1.1fr);align-items:center;gap:clamp(30px,7vw,100px);padding:45px 0 55px;min-height:650px}.landing-copy{position:relative;z-index:2;max-width:550px}.landing-copy .mini-label{color:#ff69b2}.landing-copy h1{font:700 clamp(68px,8.3vw,116px)/.88 "Space Grotesk",sans-serif;letter-spacing:-7px;margin:25px 0 25px}.landing-copy h1 span{color:#ff4fa3}.landing-description{max-width:420px;font-size:14px;line-height:1.9;color:#b8adbf}.landing-actions{display:flex;align-items:center;gap:23px;flex-wrap:wrap;margin-top:30px}.landing-cta{border:0;border-radius:13px;padding:16px 20px;background:#ff4fa3;color:#1b101a;font-weight:700;box-shadow:0 12px 35px #ff4fa32e;transition:transform .2s,box-shadow .2s}.landing-cta:hover{transform:translateY(-3px);box-shadow:0 16px 42px #ff4fa34c}.landing-cta span{font-size:18px;margin-left:25px}.landing-note{font-size:11px;color:#c7b8ce;display:flex;align-items:center;gap:10px}.landing-proof{display:flex;align-items:center;gap:13px;margin-top:55px}.proof-avatars{display:flex;padding-left:4px}.proof-avatars span{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;margin-left:-4px;border:2px solid #19121e;background:#362338;color:#ff80bd;font-size:9px;font-weight:700}.proof-avatars span:nth-child(2){background:#493047;color:#fff}.proof-avatars span:nth-child(3){background:#ff4fa3;color:#1b101a}.landing-proof p{margin:0;color:#9f91a8;font-size:10px;line-height:1.7}.landing-proof strong{color:#f5edf7;font-weight:600}.landing-visual{min-height:510px;position:relative;display:grid;place-items:center}.landing-glow{position:absolute;width:76%;aspect-ratio:1;border-radius:50%;background:#ed3b9940;filter:blur(85px)}.landing-orbit{position:absolute;border:1px solid #ff70b329;border-radius:50%;aspect-ratio:1}.orbit-a{width:96%;transform:rotate(-18deg)}.orbit-b{width:73%;transform:rotate(20deg)}.landing-card{position:relative;z-index:2;width:min(100%,440px);padding:22px;border-radius:24px;background:linear-gradient(145deg,#211b29f5,#17131df7);border:1px solid #ffffff20;box-shadow:0 35px 100px #0008;transform:rotate(2deg)}.landing-card-head{display:flex;align-items:center;justify-content:space-between}.landing-card-head>div{display:grid;gap:7px}.landing-card-head strong{font-size:13px}.landing-card .avatar{background:#3a2135;color:#ff80bd;border:1px solid #ff4fa344;width:42px;height:42px}.landing-attendance{display:flex;align-items:center;justify-content:space-between;margin-top:22px;padding:20px;border:1px solid #ffffff13;border-radius:17px;background:#ffffff04}.landing-attendance strong{display:block;font:700 48px "Space Grotesk";letter-spacing:-2px;margin:7px 0 2px}.landing-attendance strong span{font-size:25px;color:#ff4fa3}.landing-attendance small{color:#a99bb1;font-size:10px}.landing-ring{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(closest-side,#201a27 83%,transparent 85%),conic-gradient(#ff4fa3 92%,#4c354b 0);font-size:12px;font-weight:700}.landing-mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:11px}.landing-mini-grid>div{padding:14px;border:1px solid #ffffff13;border-radius:13px;background:#ffffff03}.landing-mini-grid strong{display:block;font:700 24px "Space Grotesk";margin-top:7px}.landing-next{display:flex;align-items:center;gap:12px;margin-top:17px;padding:17px 0;border-top:1px solid #ffffff15}.next-symbol{display:grid;place-items:center;width:39px;height:39px;border-radius:12px;background:#ff4fa31c;color:#ff6bb3;font-size:19px}.landing-next>div{flex:1;min-width:0}.landing-next strong,.landing-next small{display:block}.landing-next strong{font-size:11px;margin:7px 0}.landing-next small{font-size:10px;color:#a99bb1}.next-arrow{color:#ff4fa3}.landing-card-footer{border-top:1px solid #ffffff12;padding-top:15px;display:flex;justify-content:space-between;gap:10px;font-size:8px;letter-spacing:1px;color:#aa9cb2}.landing-card-footer span:first-child{display:flex;align-items:center;gap:8px;letter-spacing:0;color:#e8dce9}.landing-card-footer i{width:6px;height:6px;box-shadow:none}.floating-label{position:absolute;z-index:3;display:flex;align-items:center;gap:9px;padding:13px 16px;border:1px solid #ffffff21;border-radius:13px;background:#211827e8;box-shadow:0 15px 35px #0003;font-size:11px;color:#ff65af}.floating-label span{color:#f5edf7}.label-one{right:-2%;top:18%}.label-two{left:-4%;bottom:16%}.landing-bottom{display:flex;justify-content:space-between;gap:15px;padding-top:18px;border-top:1px solid #ffffff17;color:#8d7e96;font-size:8px;letter-spacing:1.5px}.back-landing{align-self:flex-start;border:0;background:transparent;color:#a99bb1;font-size:11px;padding:0;margin:8px 0 0}.back-landing:hover{color:#ff4fa3}
+@media(max-width:900px){.landing-hero{grid-template-columns:1fr minmax(320px,.9fr);gap:24px}.landing-copy h1{font-size:clamp(62px,8vw,88px);letter-spacing:-5px}.landing-card{padding:17px}.landing-visual{min-height:450px}.label-one{right:0}.label-two{left:0}}
+@media(max-width:680px){.landing-page{padding:22px 20px 18px}.landing-status{display:none}.landing-hero{display:flex;flex-direction:column;align-items:stretch;gap:24px;padding:60px 0 38px;min-height:0}.landing-copy h1{font-size:clamp(66px,17vw,92px);letter-spacing:-5px;margin:22px 0}.landing-description{font-size:13px}.landing-proof{margin-top:35px}.landing-visual{width:100%;min-height:390px}.landing-card{width:100%;max-width:390px;padding:16px;transform:rotate(0)}.landing-attendance{padding:15px}.landing-attendance strong{font-size:40px}.landing-ring{width:65px;height:65px}.landing-mini-grid>div{padding:11px}.landing-mini-grid strong{font-size:21px}.label-one{right:-5px;top:2%}.label-two{left:-5px;bottom:2%}.landing-bottom{font-size:7px;letter-spacing:.7px}.landing-bottom span:nth-child(2){display:none}.login-panel{width:100%;min-height:100vh;padding:24px 25px 20px}.login-content{padding:35px 0}.visual-panel{display:none!important}}
+
+/* Perbaikan: halaman login dipusatkan di layar, beranda landing tetap dipertahankan */
+#loginPage.login-panel {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px clamp(22px, 5vw, 72px) 24px;
+  align-items: center;
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba(244, 91, 165, .09), transparent 38%),
+    #111016;
+  color: #f7f3fa;
+}
+#loginPage .brand,
+#loginPage .back-landing,
+#loginPage .login-footer {
+  width: 100%;
+  max-width: 1120px;
+}
+#loginPage .brand { color: #f7f3fa; }
+#loginPage .brand-mark { background: var(--pink); color: #17111d; }
+#loginPage .back-landing { margin-top: 10px; }
+#loginPage .login-content {
+  width: min(100%, 460px);
+  max-width: 460px;
+  margin: auto;
+  padding: 34px 0;
+}
+#loginPage .login-content h1 { color: #f7f3fa; }
+#loginPage .intro { color: #b8adbf; }
+#loginPage .login-content form > label { color: #f7f3fa; }
+#loginPage .input-wrap {
+  background: #19151e;
+  border-color: #39303e;
+}
+#loginPage .input-wrap input { color: #f7f3fa; }
+#loginPage .input-wrap input::placeholder { color: #93869b; }
+#loginPage .field-icon { color: var(--pink); }
+#loginPage .remember { color: #b8adbf; }
+#loginPage .primary-btn {
+  background: linear-gradient(110deg, #ff4fa3, #f45ba5);
+  color: #1b101a;
+  box-shadow: 0 12px 35px #ff4fa32e;
+}
+#loginPage .primary-btn span { color: #1b101a; }
+#loginPage .primary-btn:hover { background: #ff7cbb; }
+#loginPage .demo-note { color: #a99bb1; }
+#loginPage .login-footer { color: #93869b; }
+@media (max-width: 680px) {
+  #loginPage.login-panel { padding: 22px 20px 18px; }
+  #loginPage .login-content { padding: 30px 0; }
+  #loginPage .login-footer { font-size: 9px; }
+}
+
+/* PERBAIKAN WARNA DROPDOWN ROLE */
+select,
+select#role,
+select[name="role"] {
+    color: #ffffff !important;
+    background-color: #211a27 !important;
+    -webkit-text-fill-color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+select option {
+    color: #ffffff !important;
+    background-color: #211a27 !important;
+}

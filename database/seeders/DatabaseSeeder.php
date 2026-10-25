@@ -8,12 +8,9 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // 1. Data Matakuliah & Dosen
+        // Data Matakuliah
         Course::updateOrCreate(
             ['code' => 'MK-PEMROGRAMAN-01'],
             [
@@ -22,11 +19,18 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        // 2. Data Mahasiswa
+        // Data 10 Mahasiswa
         $mahasiswa = [
             ['nim' => '2301001', 'name' => 'Ahmad Fauzi', 'class' => 'TI-3A', 'qr_code' => 'MHS-2301001'],
             ['nim' => '2301002', 'name' => 'Alifia Sandrati', 'class' => 'TI-3A', 'qr_code' => 'MHS-2301002'],
             ['nim' => '2301003', 'name' => 'Budi Pratama', 'class' => 'TI-3B', 'qr_code' => 'MHS-2301003'],
+            ['nim' => '2301004', 'name' => 'Citra Lestari', 'class' => 'TI-3A', 'qr_code' => 'MHS-2301004'],
+            ['nim' => '2301005', 'name' => 'Dwi Cahyo', 'class' => 'TI-3B', 'qr_code' => 'MHS-2301005'],
+            ['nim' => '2301006', 'name' => 'Eka Rahmawati', 'class' => 'TI-3A', 'qr_code' => 'MHS-2301006'],
+            ['nim' => '2301007', 'name' => 'Fajar Nugraha', 'class' => 'TI-3B', 'qr_code' => 'MHS-2301007'],
+            ['nim' => '2301008', 'name' => 'Gita Gutawa', 'class' => 'TI-3A', 'qr_code' => 'MHS-2301008'],
+            ['nim' => '2301009', 'name' => 'Hadi Sucipto', 'class' => 'TI-3B', 'qr_code' => 'MHS-2301009'],
+            ['nim' => '2301010', 'name' => 'Indah Permata', 'class' => 'TI-3A', 'qr_code' => 'MHS-2301010'],
         ];
 
         foreach ($mahasiswa as $mhs) {

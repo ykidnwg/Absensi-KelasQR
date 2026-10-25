@@ -9,11 +9,10 @@ class Student extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
-
-    // Relasi: 1 Siswa memiliki banyak riwayat Absensi
-    public function attendances()
-    {
-        return $this->hasMany(Attendance::class);
-    }
+    protected $fillable = [
+        'nim',
+        'name',
+        'class',
+        'qr_code',
+    ];
 }

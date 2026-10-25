@@ -8,25 +8,37 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
+    /**
+     * Seed the application's database.
+     */
     public function run(): void
     {
-        // Data Mata Pelajaran
-        $course = Course::firstOrCreate(
-            ['code' => 'MTK01'],
-            ['name' => 'Matematika', 'teacher_name' => 'Pak Budi']
+        // 1. Data Matakuliah & Dosen
+        Course::updateOrCreate(
+            ['code' => 'MK-PEMROGRAMAN-01'],
+            [
+                'name' => 'Pemrograman Web Lanjut',
+                'teacher_name' => 'Dr. Hendra, M.Kom'
+            ]
         );
 
-        // Daftar Siswa Banyak
-        $students = [
-            ['nisn' => '1001', 'name' => 'Ahmad', 'class' => '10-A', 'qr_code' => 'STUDENT-1001'],
-            ['nisn' => '1002', 'name' => 'Budi Santoso', 'class' => '10-A', 'qr_code' => 'STUDENT-1002'],
-            ['nisn' => '1003', 'name' => 'Siti Aminah', 'class' => '10-A', 'qr_code' => 'STUDENT-1003'],
-            ['nisn' => '1004', 'name' => 'Deni Pratama', 'class' => '10-B', 'qr_code' => 'STUDENT-1004'],
-            ['nisn' => '1005', 'name' => 'Eka Putri', 'class' => '10-B', 'qr_code' => 'STUDENT-1005'],
+        // 2. Data Mahasiswa
+        $mahasiswa = [
+            ['nim' => '2301001', 'name' => 'Ahmad Fauzi', 'class' => 'TI-3A', 'qr_code' => 'MHS-2301001'],
+            ['nim' => '2301002', 'name' => 'Alifia Sandrati', 'class' => 'TI-3A', 'qr_code' => 'MHS-2301002'],
+            ['nim' => '2301003', 'name' => 'Budi Pratama', 'class' => 'TI-3B', 'qr_code' => 'MHS-2301003'],
         ];
 
-        foreach ($students as $student) {
-            Student::updateOrCreate(['nisn' => $student['nisn']], $student);
+        foreach ($mahasiswa as $mhs) {
+            Student::updateOrCreate(
+                ['nim' => $mhs['nim']],
+                [
+                    'nim' => $mhs['nim'],
+                    'name' => $mhs['name'],
+                    'class' => $mhs['class'],
+                    'qr_code' => $mhs['qr_code'],
+                ]
+            );
         }
     }
 }

@@ -2,41 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Student;
-use App\Models\Attendance;
 use App\Models\Course;
+use Illuminate\Http\Request;
 
 class AttendanceController extends Controller
 {
-    public function store(Request $request)
+    public function index()
     {
-        $request->validate([
-            'qr_code' => 'required',
-        ]);
-
-        // Cari siswa berdasarkan QR Code
-        $student = Student::where('qr_code', $request->qr_code)->first();
-
-        if (!$student) {
-            return back()->with('error', 'Siswa tidak ditemukan!');
-        }
-
-        // Ambil data course pertama (atau sesuaikan ID matkul aktif)
+        // Ambil data mata kuliah dan 10 data mahasiswa dari database
         $course = Course::first();
+        $students = Student::all();
 
-        if (!$course) {
-            return back()->with('error', 'Belum ada data Mata Pelajaran di database!');
-        }
-
-        // Simpan data absensi
-        Attendance::create([
-            'student_id' => $student->id,
-            'course_id'  => $course->id,
-            'scanned_at' => now(),
-            'status'     => 'hadir',
-        ]);
-
-        return back()->with('success', 'Absensi berhasil untuk: ' . $student->name);
+        // Tampilkan ke view Blade UI
+        return view('dashboard', compact('course', 'students'));
     }
 }

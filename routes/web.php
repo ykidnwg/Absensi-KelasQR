@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AttendanceController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('scan');
+    return view('landing');
 });
 
-Route::post('/scan', [AttendanceController::class, 'store'])->name('scan.store');
+Route::post('/scan-qr', [AttendanceController::class, 'store'])->name('attendance.scan');

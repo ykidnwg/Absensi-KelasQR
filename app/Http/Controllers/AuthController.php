@@ -51,7 +51,7 @@ class AuthController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->route('dashboard.' . Auth::user()->role);
+        return redirect()->route(Auth::user()->role . '.dashboard');
     }
 
     public function destroy(Request $request)

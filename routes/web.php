@@ -21,14 +21,14 @@ Route::middleware('auth')->group(function () {
     Route::put('/kata-sandi', [AuthController::class, 'updatePassword'])->name('password.update');
 
     Route::get('/dashboard', function () {
-        return redirect()->route('dashboard.' . auth()->user()->role);
-    })->name('dashboard');
+    return redirect()->route(auth()->user()->role . '.dashboard');
+})->name('dashboard');
 
     Route::prefix('admin')->name('admin.')->middleware('role:admin')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'admin'])->name('dashboard');
         Route::resource('dosen', DosenController::class)->except('show');
         Route::resource('mahasiswa', MahasiswaController::class)->except('show');
-        Route::resource('kelas', KelasController::class)->except('show');
+        Route::resource('kelas', KelasController::class)->parameters(['kelas' => 'kelas'])->except('show');
 
         // Oben: tambahkan route rekap admin di grup ini saat fitur rekap siap.
     });

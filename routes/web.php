@@ -1,3 +1,4 @@
+
 <?php
 
 use App\Http\Controllers\AuthController;
@@ -6,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\RekapAbsensiController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'landing')->name('home');
@@ -21,31 +23,39 @@ Route::middleware('auth')->group(function () {
     Route::put('/kata-sandi', [AuthController::class, 'updatePassword'])->name('password.update');
 
     Route::get('/dashboard', function () {
-    return redirect()->route(auth()->user()->role . '.dashboard');
-})->name('dashboard');
+        return redirect()->route(auth()->user()->role . '.dashboard');
+    })->name('dashboard');
 
+    // ADMIN
     Route::prefix('admin')->name('admin.')->middleware('role:admin')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'admin'])->name('dashboard');
+        Route::view('/pengaturan', 'admin.pengaturan.index')->name('pengaturan');
+
         Route::resource('dosen', DosenController::class)->except('show');
         Route::resource('mahasiswa', MahasiswaController::class)->except('show');
-        Route::resource('kelas', KelasController::class)->parameters(['kelas' => 'kelas'])->except('show');
+        Route::resource('kelas', KelasController::class)
+            ->parameters(['kelas' => 'kelas'])
+            ->except('show');
 
-        // Oben: tambahkan route rekap admin di grup ini saat fitur rekap siap.
+        // REKAP ABSENSI ADMIN
+        Route::get('/rekap-absensi', [RekapAbsensiController::class, 'index'])
+            ->name('rekap-absensi');
     });
 
+    // DOSEN
     Route::prefix('dosen')->name('dosen.')->middleware('role:dosen')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'dosen'])->name('dashboard');
 
-        // Dimas: tambahkan route sesi QR dan pemindaian di grup dosen ini.
-        // Oben: tambahkan route rekap kelas di grup dosen ini.
+        // Route sesi QR dan rekap kelas dosen bisa ditambahkan nanti.
     });
 
+    // MAHASISWA
     Route::prefix('mahasiswa')->name('mahasiswa.')->middleware('role:mahasiswa')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'mahasiswa'])->name('dashboard');
 
-        // Dimas: tambahkan route pemindaian QR di grup mahasiswa ini.
-        // Endpoint lama dipertahankan untuk handler scan yang dikerjakan Dimas.
+        // Route pemindaian QR
         Route::post('/scan-qr', [AttendanceController::class, 'store'])->name('attendance.scan');
-        // Oben: tambahkan route riwayat absensi di grup mahasiswa ini.
+
+        // Route riwayat absensi mahasiswa bisa ditambahkan nanti.
     });
 });

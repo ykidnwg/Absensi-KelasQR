@@ -205,16 +205,11 @@
 
         <nav class="menu">
             <a href="{{ route('admin.dashboard') }}" class="active">▦ Dashboard</a>
-
             <a href="{{ route('admin.dosen.index') }}">♙ Data Dosen</a>
-
             <a href="{{ route('admin.mahasiswa.index') }}">♙ Data Mahasiswa</a>
-
             <a href="{{ route('admin.kelas.index') }}">▤ Data Kelas</a>
-
-            <a href="#">▣ Rekap Absensi</a>
-
-            <a href="#">⚙ Pengaturan</a>
+            <a href="{{ route('admin.rekap-absensi') }}">▣ Rekap Absensi</a>
+            <a href="{{ route('admin.pengaturan') }}">⚙ Pengaturan</a>
         </nav>
     </aside>
 

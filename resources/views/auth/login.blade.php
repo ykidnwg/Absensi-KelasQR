@@ -26,7 +26,6 @@
             min-height: 100vh;
         }
 
-        /* BAGIAN KIRI */
         .left {
             position: relative;
             overflow: hidden;
@@ -148,7 +147,6 @@
             font-size: 12px;
         }
 
-        /* BAGIAN KANAN */
         .right {
             display: flex;
             justify-content: center;
@@ -227,7 +225,7 @@
         }
 
         .password-wrap input {
-            padding-right: 65px;
+            padding-right: 90px;
         }
 
         .show-password {
@@ -382,7 +380,7 @@
                 </div>
             @endif
 
-            <form action="{{ route('login') }}" method="POST">
+            <form action="{{ route('login.store') }}" method="POST">
                 @csrf
 
                 <div class="form-group">

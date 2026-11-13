@@ -2,7 +2,6 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\KelasController;
@@ -53,8 +52,12 @@ Route::middleware('auth')->group(function () {
     Route::prefix('mahasiswa')->name('mahasiswa.')->middleware('role:mahasiswa')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'mahasiswa'])->name('dashboard');
 
-        // Route pemindaian QR
-        Route::post('/scan-qr', [AttendanceController::class, 'store'])->name('attendance.scan');
+        // Handler QR disiapkan Dimas. Placeholder ini mencegah route memanggil method yang belum ada.
+        Route::post('/scan-qr', function () {
+            return back()->withErrors([
+                'scan' => 'Fitur scan QR belum tersedia.',
+            ]);
+        })->name('attendance.scan');
 
         // Route riwayat absensi mahasiswa bisa ditambahkan nanti.
     });

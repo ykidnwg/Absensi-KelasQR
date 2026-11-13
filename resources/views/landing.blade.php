@@ -75,3 +75,15 @@
             <div class="landing-mini-grid">
               <div><span class="tiny-label">HADIR</span><strong>24</strong></div>
               <div><span class="tiny-label">IZIN</span><strong>02</strong></div>
+
+<script>
+    const loginUrl = @json(route('login'));
+
+    document.getElementById('openLogin')?.addEventListener('click', () => {
+        window.location.assign(loginUrl);
+    });
+
+    document.getElementById('openLoginTop')?.addEventListener('click', () => {
+        window.location.assign(loginUrl);
+    });
+</script>

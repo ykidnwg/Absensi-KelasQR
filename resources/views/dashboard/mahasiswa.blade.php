@@ -267,6 +267,7 @@
             <a href="{{ route('mahasiswa.dashboard') }}" class="active">
                 ▦ Dashboard
             </a>
+            <a href="{{ route('mahasiswa.qr.index') }}">▣ Scan QR Absensi</a>
         </nav>
 
         <form action="{{ route('logout') }}" method="POST">

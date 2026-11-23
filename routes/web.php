@@ -45,19 +45,21 @@ Route::middleware('auth')->group(function () {
     Route::prefix('dosen')->name('dosen.')->middleware('role:dosen')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'dosen'])->name('dashboard');
 
-        // Route sesi QR dan rekap kelas dosen bisa ditambahkan nanti.
+        // Tambahan fitur QR dosen
+        Route::get('/absensi-qr', [\App\Http\Controllers\QrAbsensiController::class, 'dosenIndex'])->name('qr.index');
+        Route::post('/absensi-qr', [\App\Http\Controllers\QrAbsensiController::class, 'buat'])->name('qr.buat');
+        Route::get('/absensi-qr/{sesi}', [\App\Http\Controllers\QrAbsensiController::class, 'tampil'])->name('qr.tampil');
+        Route::get('/absensi-qr/{sesi}/token', [\App\Http\Controllers\QrAbsensiController::class, 'token'])->name('qr.token');
+        Route::post('/absensi-qr/{sesi}/tutup', [\App\Http\Controllers\QrAbsensiController::class, 'tutup'])->name('qr.tutup');
     });
 
     // MAHASISWA
     Route::prefix('mahasiswa')->name('mahasiswa.')->middleware('role:mahasiswa')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'mahasiswa'])->name('dashboard');
 
-        // Handler QR disiapkan Dimas. Placeholder ini mencegah route memanggil method yang belum ada.
-        Route::post('/scan-qr', function () {
-            return back()->withErrors([
-                'scan' => 'Fitur scan QR belum tersedia.',
-            ]);
-        })->name('attendance.scan');
+        // Integrasi QR mahasiswa (menggantikan placeholder yang belum berfungsi)
+        Route::get('/scan-qr', [\App\Http\Controllers\QrAbsensiController::class, 'mahasiswaIndex'])->name('qr.index');
+        Route::post('/scan-qr', [\App\Http\Controllers\QrAbsensiController::class, 'scan'])->name('attendance.scan');
 
         // Route riwayat absensi mahasiswa bisa ditambahkan nanti.
     });

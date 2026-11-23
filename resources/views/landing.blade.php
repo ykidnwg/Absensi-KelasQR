@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   
   {{-- Pemanggilan CSS Utama --}}
-  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="/css/style.css?v=2">
 
   {{-- Perbaikan Z-Index, Pointer Events, dan Hidden --}}
   <style>

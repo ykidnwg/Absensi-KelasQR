@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -63,6 +64,32 @@
         .menu a:hover {
             background: #382034;
             color: #ff54ad;
+        }
+
+        /* Tombol Logout Dosen */
+        .logout-form {
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .logout-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #713052;
+            border-radius: 10px;
+            background: #251a28;
+            color: #ff54ad;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            text-align: left;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .logout-button:hover {
+            background: #382034;
+            color: #fff;
         }
 
         .main {
@@ -212,6 +239,15 @@
                 margin-right: 4px;
             }
 
+            .logout-form {
+                margin-top: 10px;
+            }
+
+            .logout-button {
+                width: auto;
+                padding: 10px 15px;
+            }
+
             .main {
                 margin-left: 0;
                 padding: 20px;
@@ -237,7 +273,21 @@
         <div class="menu-title">MENU DOSEN</div>
 
         <nav class="menu">
-            <a href="{{ route('dosen.dashboard') }}" class="active">▦ Dashboard</a>
+            <a href="{{ route('dosen.dashboard') }}" class="active">
+                ▦ Dashboard
+            </a>
+
+            <a href="{{ route('dosen.qr.index') }}">
+                ▣ Absensi Scan QR
+            </a>
+
+            <!-- Tombol Logout Dosen -->
+            <form action="{{ route('logout') }}" method="POST" class="logout-form">
+                @csrf
+                <button type="submit" class="logout-button">
+                    ⇥ Logout
+                </button>
+            </form>
         </nav>
     </aside>
 
